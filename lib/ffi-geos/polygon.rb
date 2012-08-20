@@ -37,5 +37,15 @@ module Geos
         self.interior_ring_n(n)
       end
     end
+
+    def dump_points(cur_path = [])
+      points = [ self.exterior_ring.dump_points ]
+
+      self.interior_rings.each do |ring|
+        points.push(ring.dump_points)
+      end
+
+      cur_path.concat(points)
+    end
   end
 end
