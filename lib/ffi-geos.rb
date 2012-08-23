@@ -1330,6 +1330,9 @@ module Geos
   class ParseError < Error
   end
 
+  class InvalidGeometryError < Error
+  end
+
   include GeomTypes
   include VersionConstants
 end
